@@ -1,0 +1,16 @@
+.background {
+  background: #0d1011 url('/static/dots.png') repeat fixed;
+  image-rendering: pixelated;
+  position: fixed;
+  /* oversized to retain parallax effect */
+  top: -10vh;
+  left: -10vw;
+  height: 120vh;
+  width: 120vw;
+  z-index: -1;
+  opacity: 0;
+  -moz-animation: fadein 0.75s ease-in .5s 1 normal forwards running;
+  -webkit-animation: fadein 0.75s ease-in .5s 1 normal forwards running;
+  animation: fadein 0.75s ease-in .5s 1 normal forwards running;
+  will-change: transform;
+}

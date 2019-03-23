@@ -1,0 +1,53 @@
+{
+  "name": "clapton-dev-website",
+  "version": "1.0.0",
+  "description": "clapton.dev website code",
+  "main": "js/app.js",
+  "scripts": {
+    "build": "gulp --env=prod",
+    "gulp": "gulp"
+  },
+  "contributors": [
+    "Cameron Welter <clapton@fuelrats.com> (https://www.uncleclapton.me/)"
+  ],
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.4.0",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-proposal-decorators": "^7.4.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.0",
+    "@babel/plugin-proposal-optional-catch-binding": "^7.2.0",
+    "@babel/preset-env": "^7.4.1",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "classnames": "^2.2.6",
+    "cpx": "^1.5.0",
+    "del": "^4.0.0",
+    "gulp": "^4.0.0",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-inject-string": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-rsync": "0.0.8",
+    "gulp-util": "^3.0.8",
+    "mkdirp": "^0.5.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-spring": "^8.0.18",
+    "url": "^0.11.0",
+    "webpack": "^4.29.6",
+    "webpack-stream": "^5.2.1",
+    "webpack-strip-block": "^0.2.0"
+  },
+  "devDependencies": {
+    "@fuelrats/eslint-config-react": "^0.10.4",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.15.3",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-react-hooks": "^1.5.1"
+  }
+}
