@@ -24,16 +24,20 @@ const textPos = (clientX, clientY) => `translate3d(${clientX / 15}px, ${clientY 
 
 
 const App = () => {
-  const [parallaxSpring, setPos] = useParallaxSpring()
+  const [parallaxSpring, setPos] = useParallaxSpring({
+    origin: [50, 31.8],
+    deadzone: [-130, 360, 130, -360],
+    limit: [-400, 800, 400, -800],
+  })
 
   return (
     <div
       id="app"
       onMouseMove={setPos}>
-      <animated.div className="background" style={{ transform: parallaxSpring.bgxy.interpolate(backgroundPos) }} />
+      <animated.div className="background" style={{ transform: parallaxSpring.pos.interpolate(backgroundPos) }} />
       <div className="titlecard-positioner">
-        <animated.div className="titlecard" style={{ transform: parallaxSpring.xy.interpolate(cardPos) }}>
-          <animated.div className="titlecard-content" style={{ transform: parallaxSpring.xy.interpolate(textPos) }}>
+        <animated.div className="titlecard" style={{ transform: parallaxSpring.adjPos.interpolate(cardPos) }}>
+          <animated.div className="titlecard-content" style={{ transform: parallaxSpring.adjPos.interpolate(textPos) }}>
             <span className="ptypnt-darkyellow">clapton</span>.<span className="ptypnt-darkmagenta">dev</span><br />
             <span className="titlecard-tagline">
               <a href="https://github.com/uncleclapton">Developer</a> - SysAdmin - <a href="https://www.fuelrats.com/">FuelRat</a>
