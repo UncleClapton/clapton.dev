@@ -18,9 +18,9 @@ window.console.debug = window.console.log.bind(window.console)
 /* DEVBLOCK:END */
 
 
-const backgroundPos = (clientX, clientY) => `translate3d(${clientX / 250}px, ${clientY / 250}px, 0)`
-const cardPos = (clientX, clientY) => `translate3d(${clientX / 20}px, ${clientY / 20}px, 0)`
-const textPos = (clientX, clientY) => `translate3d(${clientX / 15}px, ${clientY / 15}px, 0)`
+const backgroundPos = (xPos, yPos) => `translate3d(${xPos / 250}px, ${yPos / 250}px, 0)`
+const cardPos = (xPos, yPos) => `translate3d(${xPos / 20}px, ${yPos / 20}px, 0)`
+const textPos = (xPos, yPos) => `translate3d(${xPos / 15}px, ${yPos / 15}px, 0)`
 
 
 const App = () => {
@@ -34,10 +34,10 @@ const App = () => {
     <div
       id="app"
       onMouseMove={setPos}>
-      <animated.div className="background" style={{ transform: parallaxSpring.pos.interpolate(backgroundPos) }} />
+      <animated.div className="background" style={{ transform: parallaxSpring.rawPos.interpolate(backgroundPos) }} />
       <div className="titlecard-positioner">
-        <animated.div className="titlecard" style={{ transform: parallaxSpring.adjPos.interpolate(cardPos) }}>
-          <animated.div className="titlecard-content" style={{ transform: parallaxSpring.adjPos.interpolate(textPos) }}>
+        <animated.div className="titlecard" style={{ transform: parallaxSpring.pos.interpolate(cardPos) }}>
+          <animated.div className="titlecard-content" style={{ transform: parallaxSpring.pos.interpolate(textPos) }}>
             <span className="ptypnt-darkyellow">clapton</span>.<span className="ptypnt-darkmagenta">dev</span><br />
             <span className="titlecard-tagline">
               <a href="https://github.com/uncleclapton">Developer</a> - SysAdmin - <a href="https://www.fuelrats.com/">FuelRat</a>

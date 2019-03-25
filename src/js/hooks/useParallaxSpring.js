@@ -1,13 +1,9 @@
 /* eslint-disable no-magic-numbers */
 import { useSpring } from 'react-spring'
 
-const calcPos = (clientX, clientY) => [
-  clientX - (window.innerWidth * 0.5),
-  clientY - (window.innerHeight * 0.5),
-]
 
 
-const calcAdjPos = (clientX, clientY, origin, limit, deadzone) => {
+const calcPos = (clientX, clientY, origin, limit, deadzone) => {
   const [xOrigin, yOrigin] = origin
 
   let pos = [
@@ -41,8 +37,8 @@ const useParallaxSpring = ({
   config,
 }) => {
   const [parallaxSpring, setParallax] = useSpring(() => ({
-    adjPos: [0, 0],
     pos: [0, 0],
+    rawPos: [0, 0],
     config: {
       mass: 5,
       tension: 550,
@@ -52,18 +48,17 @@ const useParallaxSpring = ({
   }))
 
   const handleMouseMove = ({ clientX, clientY }) => setParallax({
-    pos: calcPos(clientX, clientY),
-    ...(origin
-      ? {
-        adjPos: calcAdjPos(
-          clientX,
-          clientY,
-          origin,
-          limit,
-          deadzone
-        ),
-      }
-      : {}),
+    rawPos: [
+      clientX - (window.innerWidth / 2),
+      clientY - (window.innerHeight / 2),
+    ],
+    pos: calcPos(
+      clientX,
+      clientY,
+      origin || [50, 50],
+      limit,
+      deadzone
+    ),
   })
 
   return [parallaxSpring, handleMouseMove]
