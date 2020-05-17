@@ -1,15 +1,26 @@
 module.exports = {
   env: {
     browser: true,
-    es6: true,
-    node: true,
+    commonjs: true,
   },
-  extends: '@fuelrats/eslint-config-react',
-  parserOptions: {
-    "ecmaVersion": 2018,
-    "sourceType": "module",
-  },
+  extends: [
+    '@fuelrats/eslint-config',
+    '@fuelrats/eslint-config-react',
+  ],
   rules: {
-    complexity: ['off'], // Disabled cuz we're not interested in fixing complexity problems with the old board.
-  }
+    'jsx-a11y/control-has-associated-label': ['off'], // This is literally broken
+    'jsx-a11y/no-noninteractive-element-interactions': ['off'], // We intend to enable this once we refactor certain key components.
+    'react/prop-types': ['off'], // We're not quite ready to enforce prop-types for all files yet.
+    'jsdoc/require-jsdoc': ['off'], // we'll get to it someday...
+  },
+  settings: {
+    'import/resolver': {
+      alias: {
+        map: [
+          ['~', './src'],
+        ],
+        extensions: ['.js'],
+      },
+    },
+  },
 }

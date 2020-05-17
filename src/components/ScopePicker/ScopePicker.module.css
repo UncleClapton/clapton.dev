@@ -1,0 +1,22 @@
+.scopePicker {
+  margin-top: 1rem
+}
+
+.scopePicker > div:nth-child(2) {
+  margin-top: -1.6rem;
+}
+
+.scopePicker button {
+  margin-left: 0.5rem;
+}
+
+.scopeTitle {
+  margin-bottom: 5px;
+}
+
+.scopeOpts {
+  margin-left: 15px;
+  display: grid;
+  grid-template-columns: 60px 60px;
+  grid-template-rows: 20px;
+}

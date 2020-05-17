@@ -1,4 +1,4 @@
-.titlecard-positioner {
+.card-positioner {
   position: fixed;
   width: 100vw;
   top: 20%;
@@ -6,21 +6,18 @@
   justify-content: center;
 }
 
-.titlecard {
+.card {
   position: relative;
-  font-size: 5rem;
-  text-align: center;
   text-shadow: 2px 2px #000;
   line-height: 1;
   background-color: #0d1011;
   border: 1px solid #7291a1;
-  padding: 3rem 4rem;
   white-space: nowrap;
   color: #7291a1;
   will-change: transform;
 }
 
-.titlecard::after {
+.card::after {
   content: '';
   background-image: url('/static/card-decoration.png');
   image-rendering: pixelated;
@@ -31,15 +28,20 @@
   left: -7px;
 }
 
-.titlecard-content {
+.card-wrap {
+  padding: 3rem 4rem;
+}
+
+.card-content {
   opacity: 0;
+  font-size: 5rem;
   -moz-animation: fadein .5s ease-in .25s 1 normal forwards running;
   -webkit-animation: fadein .5s ease-in .25s 1 normal forwards running;
   animation: fadein .5s ease-in .25s 1 normal forwards running;
   will-change: transform;
 }
 
-.titlecard .titlecard-content .titlecard-tagline {
+.card .card-content .card-tagline {
   font-size: .5em;
   display: block;
   margin-top: 1rem;

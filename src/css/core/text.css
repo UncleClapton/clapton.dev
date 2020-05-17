@@ -9,3 +9,11 @@
 .ptypnt-darkyellow {
   color: #f68600;
 }
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}

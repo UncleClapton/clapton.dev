@@ -1,1 +1,7 @@
-dist/*
+# Opt into dotfile linting
+!.*
+
+# Compiled sources
+dist
+deploy_dist
+node_modules

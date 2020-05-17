@@ -36,30 +36,34 @@ const useParallaxSpring = ({
   limit,
   config,
 }) => {
-  const [parallaxSpring, setParallax] = useSpring(() => ({
-    pos: [0, 0],
-    rawPos: [0, 0],
-    config: {
-      mass: 5,
-      tension: 550,
-      friction: 140,
-      ...config,
-    },
-  }))
-
-  const handleMouseMove = ({ clientX, clientY }) => setParallax({
-    rawPos: [
-      clientX - (window.innerWidth / 2),
-      clientY - (window.innerHeight / 2),
-    ],
-    pos: calcPos(
-      clientX,
-      clientY,
-      origin || [50, 50],
-      limit,
-      deadzone
-    ),
+  const [parallaxSpring, setParallax] = useSpring(() => {
+    return {
+      pos: [0, 0],
+      rawPos: [0, 0],
+      config: {
+        mass: 5,
+        tension: 550,
+        friction: 140,
+        ...config,
+      },
+    }
   })
+
+  const handleMouseMove = ({ clientX, clientY }) => {
+    return setParallax({
+      rawPos: [
+        clientX - (window.innerWidth / 2),
+        clientY - (window.innerHeight / 2),
+      ],
+      pos: calcPos(
+        clientX,
+        clientY,
+        origin || [50, 50],
+        limit,
+        deadzone,
+      ),
+    })
+  }
 
   return [parallaxSpring, handleMouseMove]
 }

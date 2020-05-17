@@ -1,0 +1,10 @@
+input,
+.input,
+button,
+.button {
+  border: 1px solid #7291a1;
+  background: transparent;
+  outline: 0;
+  color: white;
+  padding: 0.25rem 0.5rem;
+}
