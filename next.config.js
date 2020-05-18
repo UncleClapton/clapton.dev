@@ -10,6 +10,12 @@ const path = require('path')
 
 module.exports = {
   distDir: path.join('dist', 'next'),
+  exportPathMap: () => {
+    return {
+      '/': { page: '/' },
+      '/oauthtest/index': { page: '/oauthtest' },
+    }
+  },
   webpack: (config, options) => {
     /* ESLint reporting */
     if (options.dev) {
