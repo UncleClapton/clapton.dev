@@ -1,7 +1,7 @@
 // Module Imports
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import React from 'react'
-
 
 
 // Component Imports
@@ -13,8 +13,8 @@ import styles from '~/css/pages/oauthtest.module.css'
 
 
 function OAuthTest (ctx) {
-  console.log(ctx)
-  const hasQuery = Boolean(Object.keys(ctx.query ?? {}).length)
+  const { query } = useRouter()
+  const hasQuery = Boolean(Object.keys(query ?? {}).length)
   return (
     <>
       <Head><title>{'FuelRats Oauth Tester'}</title></Head>
@@ -26,7 +26,7 @@ function OAuthTest (ctx) {
           {
             hasQuery && (
               <pre>
-                {JSON.stringify(ctx.query)}
+                {JSON.stringify(query)}
               </pre>
             )
           }
