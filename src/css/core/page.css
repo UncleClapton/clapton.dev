@@ -16,6 +16,7 @@ body {
   background: #0d1011;
   font-family: "bariol", sans-serif;
   color: #7291a1;
+  font-size: 17px;
 }
 
 *, *::after, *::before {

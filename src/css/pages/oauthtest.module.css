@@ -3,6 +3,17 @@
   padding: 0;
 }
 
+.jsonTree {
+  max-width: 80vw;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  font-family: Operator Mono,SF Mono,Fira Code,Source Code Pro,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Consolas,monospace,sans-serif;
+  font-size: 14px;
+}
+
+.jsonTree > ul {
+  padding: 0.5rem 1rem !important;
+}
 
 .page {
   padding: 1rem 2rem;
