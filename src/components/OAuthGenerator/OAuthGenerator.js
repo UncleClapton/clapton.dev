@@ -17,9 +17,10 @@ export default function OAuthGenerator () {
   const [destination, handleChange] = useInputState('http://localhost:3000/authorize')
   const [scopes, handleScopeChange] = useState({})
   const query = qs.stringify({
-    scopes: Object.keys(scopes).join(' '),
-    id: 'f9a05b86-5d14-496b-b76b-92544c82e5f8',
-    redirectUri: 'https://clapton.dev/oauthtest',
+    scope: Object.keys(scopes).join(' '),
+    client_id: 'f9a05b86-5d14-496b-b76b-92544c82e5f8',
+    redirect_uri: 'https://clapton.dev/oauthtest',
+    response_type: 'token',
     state: 'pepega',
   })
   return (
@@ -31,7 +32,7 @@ export default function OAuthGenerator () {
       <ScopePicker value={scopes} onChange={handleScopeChange} />
       <br />
       <div className="text-right">
-        <a className="button" href={`${destination}/authorize?${query}`}>
+        <a className="button" href={`${destination}?${query}`}>
           {'Test Now!'}
         </a>
       </div>
